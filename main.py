@@ -14,8 +14,8 @@ lr_filename_bow = './models/Lr_bow.sav'
 lr_filename_tfidf = './models/Lr_tfidf.sav'
 svc_filename_bow = './models/SVC_bow.sav'
 svc_filename_tfidf = './models/SVC_tfidf.sav'
-mnb_filename_bow = './models/mnb_bow'
-mnb_filename_tfidf = './models/mnb_tfidf'
+mnb_filename_bow = './models/mnb_bow.sav'
+mnb_filename_tfidf = './models/mnb_tfidf.sav'
 
 # For bag-of-words
 cv = CountVectorizer(min_df=0, max_df=1, binary=False, ngram_range=(1, 3))
@@ -28,6 +28,8 @@ def linear_models_sentiment_analysis(sentence):
     sentence = remove_special_characters(sentence)
     sentence = simple_stemmer(sentence)
     sentence = remove_stopwords(sentence)
+
+    print('Doing analysis')
 
     with open(lr_filename_bow, 'rb') as f:
         lr_bow, cv_fit, tv_fit = pickle.load(f)
@@ -115,7 +117,3 @@ def model_training():
     negative_words = WC.generate(negative_text)
     plt.imshow(negative_words, interpolation='bilinear')
     plt.show
-
-
-model_training()
-
