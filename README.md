@@ -11,9 +11,9 @@ The github repo consists of three parts
 3. Uncomment the line 121 in the file main.py which call the function model_training
 4. Run main.py using <b>python main.py</b> command. All the linear models will be trained and stored in the /models folder
 5. To train the HAHNN model, 
-  1. go to the /models/hahnn and run <b>pip install -r requirements.txt</b> command. 
-  2. Then run <b>python -m spacy download en_core_web_md</b> command.
-  3. Then run /final_code/train2.py using <b>python train2.py</b> command.
+    1. go to the /models/hahnn and run <b>pip install -r requirements.txt</b> command. 
+    2. Then run <b>python -m spacy download en_core_web_md</b> command.
+    3. Then run /final_code/train2.py using <b>python train2.py</b> command.
 # Frontend
 1. Navigate to the /client folder
 2. Run npm install
